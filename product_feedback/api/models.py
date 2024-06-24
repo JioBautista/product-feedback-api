@@ -1,3 +1,7 @@
 from django.db import models
 
-# Create your models here.
+
+class CurrentUser(models.Model):
+    image = models.CharField(max_length=255)
+    name = models.CharField(max_length=255)
+    username = models.CharField(max_length=255)
