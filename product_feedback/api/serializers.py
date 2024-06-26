@@ -2,7 +2,7 @@ from rest_framework import serializers
 from api.models import CurrentUser, ProductRequests
 
 
-class CurrentUserSerializer(serializers.ModelSerializer):
+class ProductRequestsSerializers(serializers.ModelSerializer):
     class Meta:
-        model = CurrentUser
+        model = ProductRequests
         fields = "__all__"

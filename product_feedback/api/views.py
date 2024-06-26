@@ -1,14 +1,8 @@
-from django.shortcuts import render
-from rest_framework import generics
-from api.models import CurrentUser
-from api.serializers import CurrentUserSerializer
+from api.models import ProductRequests
+from api.serializers import ProductRequestsSerializers
+from rest_framework import viewsets
 
 
-class CurrentUserList(generics.ListCreateAPIView):
-    queryset = CurrentUser.objects.all()
-    serializer_class = CurrentUserSerializer
-
-
-class CurrentUserDetails(generics.RetrieveUpdateDestroyAPIView):
-    queryset = CurrentUser.objects.all()
-    serializer_class = CurrentUserSerializer
+class ProductRequestsViewSet(viewsets.ModelViewSet):
+    queryset = ProductRequests.objects.all()
+    serializer_class = ProductRequestsSerializers
